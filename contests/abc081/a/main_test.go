@@ -12,7 +12,10 @@ type Case struct {
 
 func TestSolve(t *testing.T) {
 	// add cases here
-	cases := []Case{}
+	cases := []Case{
+		{"101", "2"},
+		{"000", "0"},
+	}
 
 	for _, c := range cases {
 		r := strings.NewReader(c.Input)
