@@ -20,8 +20,10 @@ func TestSolve(t *testing.T) {
 
 		solve(r, &w)
 
-		if w.String() != c.Want {
-			t.Fatalf("want %s, got %s", c.Want, w.String())
+		got := strings.Trim(w.String(), "\n ")
+
+		if c.Want != got {
+			t.Fatalf("want %s, got %s", c.Want, got)
 		}
 	}
 }
