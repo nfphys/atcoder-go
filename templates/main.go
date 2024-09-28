@@ -24,5 +24,10 @@ func solve(r io.Reader, w io.Writer) {
 		return i
 	}
 
+	scanWord := func() string {
+		sc.Scan()
+		return sc.Text()
+	}
+
 	// solve here
 }
