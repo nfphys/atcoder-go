@@ -12,6 +12,12 @@ func main() {
 }
 
 func solve(r io.Reader, w io.Writer) {
+	scanInt, scanWord := createScanner(r)
+
+	// solve here
+}
+
+func createScanner(r io.Reader) (func() int, func() string) {
 	sc := bufio.NewScanner(r)
 	sc.Split(bufio.ScanWords)
 
@@ -29,5 +35,5 @@ func solve(r io.Reader, w io.Writer) {
 		return sc.Text()
 	}
 
-	// solve here
+	return scanInt, scanWord
 }
