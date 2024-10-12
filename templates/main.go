@@ -19,6 +19,7 @@ func solve(r io.Reader, w io.Writer) {
 
 func createScanner(r io.Reader) (func() int, func() string) {
 	sc := bufio.NewScanner(r)
+	sc.Buffer(make([]byte, 1024*1024*100), 1024*1024*1000)
 	sc.Split(bufio.ScanWords)
 
 	scanInt := func() int {
