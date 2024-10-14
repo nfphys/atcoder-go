@@ -8,7 +8,12 @@ import (
 )
 
 func main() {
-	solve(os.Stdin, os.Stdout)
+	r := os.Stdin
+
+	w := bufio.NewWriter(os.Stdout)
+	defer w.Flush()
+
+	solve(r, w)
 }
 
 func solve(r io.Reader, w io.Writer) {
